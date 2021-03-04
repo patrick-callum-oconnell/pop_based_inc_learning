@@ -4,4 +4,7 @@
 
 #include<stdio.h>
 
-void mutate(double[] prob_array, {
+void mutate(double[] prob_array, int mut_probability) {
+
+  return 0;
+}
