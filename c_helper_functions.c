@@ -5,6 +5,13 @@
 #include<stdio.h>
 
 void mutate(double[] prob_array, int mut_probability) {
-
+  
+  int arr_len = sizeof(prob_array);
+  for (int i = 0; i < arr_len; i++) {
+    
+    
+    
+  }
+  
   return 0;
 }
