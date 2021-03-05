@@ -2,7 +2,7 @@
 AUTHOR: Patrick Callum O'Connell
 Date: 3/2/2021
 
-I'm using numpy for now but I'll replace some of these functions with C functions later to speed it up more.
+I'm using numpy for now but I'll replace some of these functions the C functions in the helper file later to speed it up more.
 """
 
 
@@ -27,12 +27,15 @@ class PopBasedIncrementalLearning:
         """These values are in capital letters because they are specified in the command
         line arguments when running the driver class"""
 
+        #I've made these all caps because they are kind of pseudo-constants as they're passed from the command line
+        #and do not change
+
         self.SAMPLES = SAMPLES #how many vectors are generated for a population before updating prob vector
-        self.LR = LR #learning rate (positive)
-        self.NEGATIVE_LR #learning rate (negative)
-        self.LENGTH = LENGTH #length of bits in a given vector
-        self.MUT_PROBABILITY = MUT_PROBABILITY #prob for mutation for any given bit
-        self.MUT_SHIFT = MUT_SHIFT #how much mutation alters each bit
+        self.LR = LR #learning rate, double (positive)
+        self.NEGATIVE_LR #learning rate, double (negative)
+        self.LENGTH = LENGTH #length of bits in a given vector, integer
+        self.MUT_PROBABILITY = MUT_PROBABILITY #prob for mutation for any given bit, double
+        self.MUT_SHIFT = MUT_SHIFT #how much mutation alters each bit, double
 
         #note: numpy provides functionality for initializing arrays as random, so we could
         #try that as an experiment by passing another boolean parameter to this intialization
@@ -106,6 +109,13 @@ class PopBasedIncrementalLearning:
 
 #TODO
 
+    #I'm still deciding on whether or not to have the cnf parsing done in this class
+    #or to have it happen in the main driver (not written yet), but I'm leaning towards
+    #putting it in this class, or just writing a new class that parses and holds cnf examples
+
+    #I think at this point, putting it in this class makes the most sense for me (putting the parsing in the init)
+    #because then I know that these functions would easily have access to those examples, so they can evaluate the
+    #fitness of a vector in the population
     def findBestVector(self):
 
     def findWorstVector(self):
