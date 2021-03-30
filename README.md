@@ -3,6 +3,8 @@ A C based implementation of Population Based Incremental Learning that solves MA
 
 This used to be a Python-driven program, but I've since converted it to C for speed.
 
+It takes a MAXSAT problem and over a specified number of maximum iterations (also stopping if max fitness has been reached) it finds what should be close to the optimal solution.
+
 This can be compiled with "gcc pbil_c.c c_helper_functions.c dependencies.c -o "output"", where "output" is the desired name for the resultant executable.
 
 Command line arguments:
